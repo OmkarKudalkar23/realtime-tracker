@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Real-Time Tracker</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+
+  <!-- Custom styles for 3D/Glassmorphism -->
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    #map {
+      height: 100vh;
+      width: 100%;
+      border-radius: 1rem;
+      filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    }
+
+    .glass-card {
+      backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      color: white;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+
+<body class="relative">
+
+  <!-- Map Container -->
+  <div id="map" class="z-0"></div>
+
+  <!-- 3D UI Overlay (glass card) -->
+  <div class="glass-card absolute top-6 left-6 max-w-sm">
+    <h1 class="text-2xl font-bold mb-2">📍 Real-Time Tracker</h1>
+    <p class="text-sm">Live location tracking in a modern 3D interface. All movements are synced in real-time.</p>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+  <script src="/javascripts/script.js"></script>
+
+</body>
+</html>
